@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package alfa;
+
+service TestService {
+	rpc Login(LoginInfo) returns (User) {}
+	rpc PingMe(User) returns (PingInfo) {}
+}
+
+message LoginInfo {
+	string username = 1;
+	string password = 2;
+}
+
+message User {
+	string id = 1;
+	string name = 2;
+	string webcamStreamId = 3;
+}
+
+message PingInfo {
+	int32 time = 1;
+}
